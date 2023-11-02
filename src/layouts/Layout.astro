@@ -7,10 +7,10 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="ja">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="description" content="Akashi Intelligence official" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
@@ -31,9 +31,17 @@ const { title } = Astro.props;
 			rgb(var(--accent-light)) 30%,
 			white 60%
 		);
+		--primary-red: #F2371F;
+	}
+	@font-face {
+		font-family: "Yu Gothic";
+		src: url("/fonts/YuGothic-Regular.ttf") format("truetype");
+		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
 	}
 	html {
-		font-family: system-ui, sans-serif;
+		font-family: "Yu Gothic";
 		background: #13151a;
 		background-size: 224px;
 	}
