@@ -1,0 +1,65 @@
+---
+import MemberCard from "./MemberCard.astro";
+const membersData = [
+    {
+        id: 1,
+        pos: '社長',
+        name: '山本 一輝',
+        grade: '5年都市工学科',
+        img: '/yamamoto-card.jpg',
+    },
+    {
+        id: 2,
+        pos: '副社長 / 経営計画部長',
+        name: '北 光一',
+        grade: '5年都市工学科',
+        img: '/kita.jpg',
+    },
+    {
+        id: 3,
+        pos: '技術開発部長',
+        name: '池本 陽飛',
+        grade: '5年電気情報工学科',
+        img: '/ikemoto.jpg',
+    },
+    {
+        id: 4,
+        pos: '補助教員',
+        name: '荒川 裕紀',
+        grade: '教養学群人文科学系教員',
+        img: '/arakawa.jpg',
+    },
+    {
+        id: 5,
+        pos: '?',
+        name: '新庄 都逸',
+        grade: '3年電気情報工学科',
+        img: '/shinjo.jpg',
+    },
+    {
+        id: 6,
+        pos: 'エンジニア?',
+        name: '友田 大揮',
+        grade: '3年電気情報工学科',
+        img: '/tomoda.jpg',
+    },
+]
+---
+
+<section class="w-full px-[30px] py-[100px]">
+    <div class="@container w-full flex flex-col items-start gap-[100px]">
+        <div>
+            <h2 class="text-[64px] leading-[1.4] text-black"><span class="text-[var(--primary-red)]">メ</span>ンバー紹介</h2>
+            <p class="text-[16px] leading-[2.0] pt-[30px]">
+                専門分野が全く違う、4学科それぞれから個性的なメンバーが集結しました。
+                それぞれが手探りながらも未知の分野を探求しています。
+            </p>
+        </div>
+        <!-- members card -->
+        <div class="w-full @[480px]:w-max mx-auto grid gap-0 @[600px]:grid-cols-2 @[900px]:grid-cols-3 @[1200px]:grid-cols-4 rounded-[10px] overflow-hidden">
+            {membersData.map((item) => (
+                <MemberCard pos={item.pos} name={item.name} grade={item.grade} img={item.img} />
+            ))}
+        </div>
+    </div>
+</section>
