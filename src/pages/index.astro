@@ -1,8 +1,33 @@
 ---
 import BossMessage from "../components/BossMessage.astro";
 import Hero from "../components/Hero.astro";
+import ProductCard from "../components/ProductCard.astro";
 import ProductIntro from "../components/ProductIntro.astro";
 import Layout from "../layouts/Layout.astro";
+
+const productFunctions = [
+	{
+		id: 1,
+		title: "AIがあなたに合わせた情報をお届けします",
+		description:
+			"ディープラーニングを用いることで、ランナーの走り方の「癖」を理解し、ランナーの経験や体格などから個人に合わせた最適な走法を、ケガをしてしまう前に負担を小さくする走り方を改善を促すことが出来ます。更に、現在陸上競技のトレーニングはコーチなどが付きっきりで指導するのが一般的ですが、コロナ禍で満足に練習場に行けない時でも、一人でも好きなタイミングで指導を受けながらトレーニングができるため、アマチュアだけでなくプロの業界でも接触機会の減少に貢献できます。",
+		image: "/function-01.png",
+	},
+	{
+		id: 2,
+		title: "インソールだから、あなたのお気に入りの靴でも",
+		description:
+			"現在大手シューズメーカーが類似商品を発売中ですが、そちらは専用のシューズが必要となるため高価になりますが、R☆AI☆NNER本体はシューズから完全に独立しているためどんなシューズでも使用でき、シューズやインソールが劣化してもそれらを買い替えるだけで引き続き使い続けることが出来る高い汎用性を有しています。",
+		// image: "/shinjyo.jpg",
+	},
+	{
+		id: 3,
+		title: "専用アプリと連携して運動効果をチェック",
+		description:
+			"ディープラーニングを用いることで、ランナーの走り方の「癖」を理解し、ランナーの経験や体格などから個人に合わせた最適な走法を、ケガをしてしまう前に負担を小さくする走り方を改善を促すことが出来ます。更に、現在陸上競技のトレーニングはコーチなどが付きっきりで指導するのが一般的ですが、コロナ禍で満足に練習場に行けない時でも、一人でも好きなタイミングで指導を受けながらトレーニングができるため、アマチュアだけでなくプロの業界でも接触機会の減少に貢献できます。",
+		image: "/function-02.png",
+	},
+];
 ---
 
 <Layout title="Akashi Intelligence official">
@@ -10,5 +35,22 @@ import Layout from "../layouts/Layout.astro";
 		<Hero />
 		<BossMessage />
 		<ProductIntro />
+		<section
+			class="w-full px-[30px] py-[80px] flex flex-col items-center gap-[100px]"
+		>
+			{
+				productFunctions.map((item) => (
+					<ProductCard
+						id={item.id}
+						title={item.title}
+						description={item.description}
+						image={item.image && item.image}
+					/>
+				))
+			}
+		</section>
+		<section>
+			
+		</section>
 	</main>
 </Layout>
